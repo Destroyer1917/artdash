@@ -3,22 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Свадебное приглашение</title>
+    <title>Приглашение на свадьбу Артема и Даши</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="background">
-        <div class="stars"></div>
-        <div class="twinkling"></div>
-        <div class="clouds"></div>
-    </div>
-    
-    <div class="content">
-        <h1>Артём & Даша</h1>
-        <p>Приглашаем вас на нашу свадьбу!</p>
-        <h2>26 августа 2025 года</h2>
-        <h3>Кармель-бай-зе-Си, Калифорния</h3>
-        <button onclick="alert('Ждём вас!')">Принять приглашение</button>
-    </div>
+    <header>
+        <div class="container">
+            <div id="envelope" class="envelope">
+                <div class="flap top"></div>
+                <div class="flap bottom"></div>
+                <div class="body"></div>
+            </div>
+            <div id="invitation" class="invitation">
+                <h1>Приглашение на свадьбу</h1>
+                <h2>Артем и Даша</h2>
+                <p class="date">5 июля 2025 года</p>
+                <p class="place">Зал для церемоний "Счастье"</p>
+                <p>Мы рады пригласить вас на этот чудесный день, который запомнится навсегда!</p>
+            </div>
+        </div>
+    </header>
+
+    <footer>
+        <div class="container">
+            <p>Контактная информация: wedding@yourmail.com</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
