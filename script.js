@@ -23,13 +23,16 @@ const updateTimer = setInterval(function() {
 
 // Открытие конверта и показ приглашения
 document.getElementById("envelope").onclick = function() {
-  document.querySelector(".envelope-image").style.opacity = "0"; // Исчезает картинка конверта
-  
+  // Анимация исчезновения конверта и его улетания
+  document.querySelector(".envelope-image").style.transform = "scale(0.1) translateY(200px)";
+  document.querySelector(".envelope-image").style.opacity = "0";
+
+  // Задержка для анимации конверта, потом показываем приглашение
   setTimeout(function() {
     document.getElementById("invitation").style.display = "block";
     document.getElementById("invitation").style.opacity = "1";
     document.getElementById("invitation").style.transform = "scale(1)";
-  }, 500); // Показ пригласительного через полсекунды
+  }, 1000); // Показ пригласительного через 1 секунду
 };
 
 // Лепестки
