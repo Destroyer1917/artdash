@@ -1,11 +1,19 @@
-.envelope {
-    width: 200px; /* Подберите размеры изображения */
-    height: 150px; /* Подберите размеры изображения */
-    background-image: url('IMG_0470.png'); /* Путь к изображению */
-    background-size: cover; /* Чтобы изображение растягивалось */
-    background-position: center; /* Центрируем изображение */
-    margin: 0 auto; /* Центрируем конверт */
-    position: relative;
-    cursor: pointer;
-    transition: transform 1s ease;
-}
+// Получаем элементы
+const envelope = document.querySelector('.envelope');
+const topFlap = document.querySelector('.top');
+const bottomFlap = document.querySelector('.bottom');
+const invitation = document.querySelector('.invitation');
+
+// Функция для открытия конверта
+envelope.addEventListener('click', function() {
+    // Анимация раскрытия верхней и нижней части конверта
+    topFlap.style.transform = 'rotateX(-180deg)';
+    bottomFlap.style.transform = 'rotateX(180deg)';
+
+    // Показать приглашение с анимацией
+    setTimeout(function() {
+        invitation.style.display = 'block';  // Показываем приглашение
+        invitation.style.opacity = '1';  // Анимация плавного появления
+        invitation.style.transform = 'scale(1)';
+    }, 500); // Задержка для того, чтобы конверт раскрылся перед показом приглашения
+});
