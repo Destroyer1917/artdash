@@ -1,79 +1,120 @@
+/* Подключение шрифта Playfair Display */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+/* Основные стили для тела страницы */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f5f5f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-family: 'Playfair Display', serif; /* Элегантный шрифт */
+    background-color: #f5f5f5; /* Мягкий фон */
     margin: 0;
+    overflow: hidden;
 }
 
-.container {
-    text-align: center;
-}
-
-.countdown {
+/* Общие стили для презентации */
+.presentation {
+    width: 100%;
+    height: 100vh;
     display: flex;
+    align-items: center;
     justify-content: center;
-    margin-bottom: 20px;
+    position: relative;
 }
 
-.countdown-item {
-    font-size: 2em;
-    font-weight: bold;
-    margin: 0 10px;
-    color: #ff6600;
-}
-
+/* Стиль для конверта */
 .envelope {
     width: 200px;
     height: 150px;
-    background-image: url('IMG_0470.png'); /* Путь к вашему изображению */
+    background-image: url('IMG_0470.png'); /* Ваша картинка конверта */
     background-size: cover;
-    background-position: center;
-    margin: 0 auto;
     position: relative;
     cursor: pointer;
-    transition: transform 1s ease;
+    transition: opacity 0.5s ease-in-out;
 }
 
+/* Верхняя и нижняя части конверта */
 .top, .bottom {
-    background-color: rgba(255, 255, 255, 0.8);
     position: absolute;
     width: 100%;
     height: 50%;
+    background-color: #fff;
     left: 0;
     transition: transform 1s ease;
 }
 
 .top {
     top: 0;
-    transform-origin: bottom;
+    transform-origin: top;
 }
 
 .bottom {
     bottom: 0;
-    transform-origin: top;
+    transform-origin: bottom;
 }
 
+/* Приглашение, которое будет показываться после открытия конверта */
 .invitation {
-    display: none; /* При старте скрываем приглашение */
+    display: none;
     opacity: 0;
-    transform: scale(0.8);
-    transition: transform 1s ease, opacity 1s ease;
-    padding: 20px;
-    font-size: 20px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin-top: 20px;
+    transform: scale(0.9);
+    transition: opacity 1s ease, transform 1s ease;
 }
 
-.invitation h1 {
-    font-size: 2em;
-    color: #ff6600;
+/* Контейнер для лепестков */
+.petals-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
 }
 
-.invitation p {
-    font-size: 1.2em;
+/* Стиль для лепестков */
+.petal {
+    position: absolute;
+    width: 25px;  /* Размер лепестка */
+    height: 25px;
+    background-color: rgba(255, 182, 193, 0.5); /* Пастельный розовый цвет с прозрачностью */
+    border-radius: 40% 40% 0 0; /* Форма лепестка как у сакуры */
+    animation: fly 15s infinite linear;
+}
+
+/* Анимация для падения лепестков */
+@keyframes fly {
+    0% {
+        top: 0;
+        opacity: 1;
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        top: 100vh;
+        opacity: 0;
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+/* Стили для таймера */
+.timer {
+    font-size: 2rem;
     color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.timer span {
+    font-weight: bold;
+}
+
+/* Стили для текста в приглашении */
+.invitation-text {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Стиль для цифр на таймере */
+#days, #hours, #minutes, #seconds {
+    font-size: 2rem;
+    color: #ffb6c1; /* Розовый цвет */
+    font-weight: bold;
 }
