@@ -12,6 +12,19 @@ body {
     text-align: center;
 }
 
+.countdown {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.countdown-item {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0 10px;
+    color: #ff6600;
+}
+
 .envelope {
     width: 200px;
     height: 150px;
