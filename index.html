@@ -1,44 +1,27 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Приглашение на свадьбу</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Приглашение на свадьбу</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Таймер -->
-        <div class="countdown">
-            <div class="countdown-item">
-                <span id="days"></span> <strong>Дней</strong>
-            </div>
-            <div class="countdown-item">
-                <span id="hours"></span> <strong>Часов</strong>
-            </div>
-            <div class="countdown-item">
-                <span id="minutes"></span> <strong>Минут</strong>
-            </div>
-            <div class="countdown-item">
-                <span id="seconds"></span> <strong>Секунд</strong>
-            </div>
-        </div>
-
-        <!-- Конверт -->
-        <div class="envelope">
-            <div class="top"></div>
-            <div class="bottom"></div>
-        </div>
-
-        <!-- Приглашение -->
-        <div class="invitation">
-            <h1>Артем и Даша</h1>
-            <p>письки какашки</p>
-            <p>Дата: 5 июля 2025 года</p>
-            <p>Место: писька </p>
-        </div>
+  <div class="timer">
+    <span id="timer">До праздника осталось: <span id="days"></span> дней <span id="hours"></span> часов <span id="minutes"></span> минут <span id="seconds"></span> секунд</span>
+  </div>
+  
+  <div class="container">
+    <div class="envelope" id="envelope">
+      <img src="IMG_0470.png" alt="Конверт" class="envelope-image" />
     </div>
+    <div class="invitation" id="invitation">
+      <p class="invitation-text">Дорогие друзья!<br>Мы с радостью приглашаем вас на наш праздник!<br>5 июля, 2025 года.</p>
+    </div>
+    <div class="petals-container" id="petals-container"></div>
+  </div>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
